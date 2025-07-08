@@ -7,8 +7,7 @@ workflows:
       vars:
         XCODE_PROJECT: "Huldrivox.xcodeproj"
         XCODE_SCHEME: "Huldrivox"
-      code_signing:
-        provisioning_profiles: auto
+
     scripts:
       - name: Set up keychain for code signing
         script: keychain initialize
