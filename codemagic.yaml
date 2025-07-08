@@ -5,7 +5,7 @@ workflows:
       groups:
         - admin
       vars:
-        XCODE_PROJECT: "Huldrivox.xcodeproj"
+        XCODE_WORKSPACE: "Huldrivox.xcworkspace"
         XCODE_SCHEME: "Huldrivox"
     scripts:
       - name: Initialize keychain
@@ -38,7 +38,9 @@ workflows:
 
       - name: Build IPA
         script: |
-          xcode-project build-ipa --scheme "$XCODE_SCHEME"
+          xcode-project build-ipa \
+            --workspace "$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
 
     artifacts:
       - build/ios/ipa/*.ipa
