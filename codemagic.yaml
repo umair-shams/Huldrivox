@@ -8,7 +8,7 @@ workflows:
         XCODE_PROJECT: "Huldrivox/Huldrivox.xcodeproj"
         XCODE_SCHEME: "Huldrivox"
         DEVELOPMENT_TEAM: "URFBLTLN99"
-        CODE_SIGN_IDENTITY: "iPhone Distribution"
+        CODE_SIGN_IDENTITY: "Apple Distribution" # Change to Apple Distribution if required
     scripts:
       - name: Initialize keychain
         script: |
@@ -34,6 +34,36 @@ workflows:
 
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
+      - name: Generate export options plist
+        script: |
+          cat > export_options.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>method</key>
+              <string>app-store</string>
+              <key>teamID</key>
+              <string>${DEVELOPMENT_TEAM}</string>
+              <key>signingStyle</key>
+              <string>manual</string>
+              <key>provisioningProfiles</key>
+              <dict>
+                  <key>com.Huldrivox</key>
+                  <string>Huldrivox</string>
+              </dict>
+              <key>compileBitcode</key>
+              <true/>
+              <key>destination</key>
+              <string>export</string>
+              <key>stripSwiftSymbols</key>
+              <true/>
+              <key>thinning</key>
+              <string>&lt;none&gt;</string>
+          </dict>
+          </plist>
+          EOF
+
       - name: Set up manual code signing
         script: |
           xcode-project use-profiles
@@ -43,7 +73,7 @@ workflows:
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
             --scheme "$XCODE_SCHEME" \
-            --export-options-plist /Users/builder/export_options.plist
+            --export-options-plist export_options.plist
 
     artifacts:
       - build/ios/ipa/*.ipa
