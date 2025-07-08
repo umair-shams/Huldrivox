@@ -7,8 +7,6 @@ workflows:
       vars:
         XCODE_PROJECT: "Huldrivox/Huldrivox.xcodeproj"
         XCODE_SCHEME: "Huldrivox"
-        DEVELOPMENT_TEAM: "URFBLTLN99"
-        CODE_SIGN_IDENTITY: "iPhone Distribution"
     scripts:
       - name: Initialize keychain
         script: |
@@ -38,12 +36,11 @@ workflows:
         script: |
           xcode-project use-profiles
 
-      - name: Build IPA
+      - name: Build IPA with automatic signing
         script: |
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME" \
-            --archive-xcargs "DEVELOPMENT_TEAM=$DEVELOPMENT_TEAM CODE_SIGN_IDENTITY='$CODE_SIGN_IDENTITY' CODE_SIGN_STYLE=Manual"
+            --scheme "$XCODE_SCHEME"
 
     artifacts:
       - build/ios/ipa/*.ipa
