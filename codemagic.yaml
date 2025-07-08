@@ -16,6 +16,6 @@ workflows:
     publishing:
       app_store_connect:
         api_key:
-          key_id: $APP_STORE_CONNECT_KEY_ID
-          issuer_id: $APP_STORE_CONNECT_ISSUER_ID
-          private_key: $APP_STORE_CONNECT_PRIVATE_KEY
+          key_id: "XCY285TMQC"
+          issuer_id: "31b49898-e13f-4731-ad0e-289331700376"
+          private_key: "-----BEGIN PRIVATE KEY-----MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgu+3Gm8rExlbRSxLZJgeDgQdfG+OGjfhmBelH/SRkVNagCgYIKoZIzj0DAQehRANCAARXtg3wOEOAByQYugFdL/Zg/J1OpRj/LvznAochkfZuZ2UHxE0OjXg92hb/JEyAdLSk+f0SktjTzE4hKDNMz+3D-----END PRIVATE KEY-----"
