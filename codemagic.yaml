@@ -5,7 +5,7 @@ workflows:
       groups:
         - admin
       vars:
-        XCODE_PROJECT: "Huldrivox.xcodeproj"
+        XCODE_PROJECT: "Huldrivox/Huldrivox.xcodeproj"
         XCODE_SCHEME: "Huldrivox"
     scripts:
       - name: Initialize keychain
