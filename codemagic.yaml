@@ -74,6 +74,7 @@ workflows:
             --project "$XCODE_PROJECT" \
             --scheme "$XCODE_SCHEME" \
             --export-options-plist export_options.plist
+            --export-xcargs "CODE_SIGN_IDENTITY='Apple Distribution'"
 
     artifacts:
       - build/ios/ipa/*.ipa
