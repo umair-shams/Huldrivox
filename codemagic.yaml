@@ -4,21 +4,33 @@ workflows:
     environment:
       groups:
         - admin
+      vars:
+        XCODE_PROJECT: "Huldrivox.xcodeproj"
+        XCODE_SCHEME: "Huldrivox"
     scripts:
-      - name: Set up keychain to be used for code signing using Codemagic CLI 'keychain' command
-        script: keychain initialize
+      - name: Initialize keychain
+        script: |
+          keychain initialize
 
-      - name: Fetch signing files
-        script: app-store-connect fetch-signing-files "com.Huldrivox"
+      - name: Decode and import signing certificate
+        script: |
+          echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > cert.p12
+          security import cert.p12 -P "$CERTIFICATE_PASSWORD" -A
 
-      - name: Set up signing certificate
-        script: keychain add-certificates
+      - name: Import provisioning profile
+        script: |
+          echo $PROVISIONING_PROFILE | base64 --decode > profile.mobileprovision
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          uuid=$(grep -a -E -o "[-A-F0-9]{36}" profile.mobileprovision | head -1)
+          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
-      - name: Set up code signing settings on Xcode project
-        script: xcode-project use-profiles
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles
 
-      - name: Build App
-        script: xcode-project build-ipa --xcodeproj "Huldrivox.xcodeproj" --scheme "Huldrivox"
+      - name: Build IPA
+        script: |
+          xcode-project build-ipa --xcodeproj "$XCODE_PROJECT" --scheme "$XCODE_SCHEME"
 
     artifacts:
       - build/ios/ipa/*.ipa
