@@ -1,6 +1,6 @@
 workflows:
   ios-workflow:
-    name: Custom Workflow
+    name: iOS App Store Build
     environment:
       groups:
         - admin
@@ -14,14 +14,19 @@ workflows:
 
       - name: Decode and import signing certificate
         script: |
-          echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > cert.p12
-          security import cert.p12 -P "$CERTIFICATE_PASSWORD" -A
+          echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > certificate.p12
+          security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -A
 
       - name: Import provisioning profile
         script: |
           echo $PROVISIONING_PROFILE | base64 --decode > profile.mobileprovision
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           uuid=$(grep -a -E -o "[-A-F0-9]{36}" profile.mobileprovision | head -1)
+          if [ -z "$uuid" ]; then
+            echo "❌ Failed to extract UUID from provisioning profile"
+            cat profile.mobileprovision
+            exit 1
+          fi
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
       - name: Set up code signing
@@ -30,7 +35,9 @@ workflows:
 
       - name: Build IPA
         script: |
-          xcode-project build-ipa --xcodeproj "$XCODE_PROJECT" --scheme "$XCODE_SCHEME"
+          xcode-project build-ipa \
+            --xcodeproj "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
 
     artifacts:
       - build/ios/ipa/*.ipa
