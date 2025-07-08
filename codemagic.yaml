@@ -18,7 +18,7 @@ workflows:
         script: |
           echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > certificate.p12
           security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -A
-          security set-key-partition-list -S apple-tool:,apple: -s -k "$CERTIFICATE_PASSWORD" ~/Library/Keychains/login.keychain-db
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/login.keychain-db
 
       - name: Import provisioning profile
         script: |
@@ -39,11 +39,42 @@ workflows:
         script: |
           xcode-project use-profiles
 
+      - name: Generate export options plist
+        script: |
+          cat > export_options.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>method</key>
+              <string>app-store</string>
+              <key>teamID</key>
+              <string>${DEVELOPMENT_TEAM}</string>
+              <key>signingStyle</key>
+              <string>manual</string>
+              <key>provisioningProfiles</key>
+              <dict>
+                  <key>com.Huldrivox</key>
+                  <string>Huldrivox</string>
+              </dict>
+              <key>destination</key>
+              <string>export</string>
+              <key>compileBitcode</key>
+              <true/>
+              <key>stripSwiftSymbols</key>
+              <true/>
+              <key>thinning</key>
+              <string>&lt;none&gt;</string>
+          </dict>
+          </plist>
+          EOF
+
       - name: Build IPA with manual signing
         script: |
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+            --scheme "$XCODE_SCHEME" \
+            --export-options-plist export_options.plist
 
     artifacts:
       - build/ios/ipa/*.ipa
