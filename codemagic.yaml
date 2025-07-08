@@ -12,17 +12,10 @@ workflows:
         script: |
           keychain initialize
 
-      - name: Decode and import signing certificate
+      - name: Import signing certificate
         script: |
           echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > certificate.p12
           security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -A
-
-      # Optional: Only if automatic signing still requires a profile
-      - name: Import provisioning profile (optional)
-        script: |
-          echo $PROVISIONING_PROFILE | base64 --decode > profile.mobileprovision
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
       - name: Build IPA using automatic signing
         script: |
