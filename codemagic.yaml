@@ -8,7 +8,7 @@ workflows:
         XCODE_PROJECT: "Huldrivox/Huldrivox.xcodeproj"
         XCODE_SCHEME: "Huldrivox"
         DEVELOPMENT_TEAM: "URFBLTLN99"
-        CODE_SIGN_IDENTITY: "Apple Distribution" # Change to Apple Distribution if required
+        CODE_SIGN_IDENTITY: "Apple Distribution"
     scripts:
       - name: Initialize keychain
         script: |
@@ -18,6 +18,7 @@ workflows:
         script: |
           echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > certificate.p12
           security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -A
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/login.keychain-db
 
       - name: Import provisioning profile
         script: |
@@ -33,6 +34,10 @@ workflows:
           fi
 
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles
 
       - name: Generate export options plist
         script: |
@@ -52,10 +57,10 @@ workflows:
                   <key>com.Huldrivox</key>
                   <string>Huldrivox</string>
               </dict>
-              <key>compileBitcode</key>
-              <true/>
               <key>destination</key>
               <string>export</string>
+              <key>compileBitcode</key>
+              <true/>
               <key>stripSwiftSymbols</key>
               <true/>
               <key>thinning</key>
@@ -63,10 +68,6 @@ workflows:
           </dict>
           </plist>
           EOF
-
-      - name: Set up manual code signing
-        script: |
-          xcode-project use-profiles
 
       - name: Build IPA with manual signing
         script: |
