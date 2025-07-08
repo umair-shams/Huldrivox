@@ -18,16 +18,19 @@ workflows:
           security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -A
 
       - name: Import provisioning profile
-        script: |
-          echo $PROVISIONING_PROFILE | base64 --decode > profile.mobileprovision
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          uuid=$(grep -a -E -o "[-A-F0-9]{36}" profile.mobileprovision | head -1)
-          if [ -z "$uuid" ]; then
-            echo "❌ Failed to extract UUID from provisioning profile"
-            cat profile.mobileprovision
-            exit 1
-          fi
-          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+  script: |
+    echo $PROVISIONING_PROFILE | base64 --decode > profile.mobileprovision
+    mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+    security cms -D -i profile.mobileprovision > decoded.plist
+    uuid=$(/usr/libexec/PlistBuddy -c "Print UUID" decoded.plist)
+
+    if [ -z "$uuid" ]; then
+      echo "❌ Failed to extract UUID from decoded provisioning profile"
+      cat decoded.plist
+      exit 1
+    fi
+
+    cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
       - name: Set up code signing
         script: |
