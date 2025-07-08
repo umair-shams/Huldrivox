@@ -1,49 +1,27 @@
 workflows:
-  ios-manual-signing:
-    name: iOS App Store Build (Manual Signing)
+  ios-workflow:
+    name: iOS App Store Build
     environment:
       groups:
         - admin
       vars:
         XCODE_PROJECT: "Huldrivox/Huldrivox.xcodeproj"
         XCODE_SCHEME: "Huldrivox"
-        DEVELOPMENT_TEAM: "URFBLTLN99"
-        CODE_SIGN_IDENTITY: "iPhone Distribution"
     scripts:
       - name: Initialize keychain
         script: |
           keychain initialize
 
-      - name: Import distribution certificate
+      - name: Import signing certificate
         script: |
           echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > certificate.p12
           security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -A
 
-      - name: Import provisioning profile
-        script: |
-          echo $PROVISIONING_PROFILE | base64 --decode > profile.mobileprovision
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          security cms -D -i profile.mobileprovision > decoded.plist
-          uuid=$(/usr/libexec/PlistBuddy -c "Print UUID" decoded.plist)
-
-          if [ -z "$uuid" ]; then
-            echo "❌ Failed to extract UUID from provisioning profile"
-            cat decoded.plist
-            exit 1
-          fi
-
-          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
-
-      - name: Set up manual code signing
-        script: |
-          xcode-project use-profiles
-
-      - name: Build IPA with manual signing
+      - name: Build IPA using automatic signing
         script: |
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME" \
-            --export-options-plist /Users/builder/export_options.plist
+            --scheme "$XCODE_SCHEME"
 
     artifacts:
       - build/ios/ipa/*.ipa
