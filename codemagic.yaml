@@ -7,18 +7,24 @@ workflows:
       vars:
         XCODE_PROJECT: "Huldrivox/Huldrivox.xcodeproj"
         XCODE_SCHEME: "Huldrivox"
-
     scripts:
       - name: Initialize keychain
         script: |
           keychain initialize
 
-      - name: Import signing certificate
+      - name: Decode and import signing certificate
         script: |
           echo $CERTIFICATE_PRIVATE_KEY | base64 --decode > certificate.p12
           security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -A
 
-      - name: Build IPA with automatic signing
+      # Optional: Only if automatic signing still requires a profile
+      - name: Import provisioning profile (optional)
+        script: |
+          echo $PROVISIONING_PROFILE | base64 --decode > profile.mobileprovision
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+
+      - name: Build IPA using automatic signing
         script: |
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
