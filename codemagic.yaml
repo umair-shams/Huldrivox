@@ -1,1 +1,21 @@
-
+workflows:
+  ios-workflow:
+    name: iOS Build & Upload
+    environment:
+      vars:
+        XCODE_WORKSPACE: "Huldrivox.xcodeproj"  # or .xcodeproj if no CocoaPods
+        XCODE_SCHEME: "Huldrivox"
+      xcode: latest
+    scripts:
+      - name: Build IPA
+        script: |
+          xcodebuild clean -workspace $XCODE_WORKSPACE -scheme $XCODE_SCHEME -configuration Release -sdk iphoneos -archivePath $HOME/build/$XCODE_SCHEME.xcarchive archive
+          xcodebuild -exportArchive -archivePath $HOME/build/$XCODE_SCHEME.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $HOME/build
+    artifacts:
+      - build/*.ipa
+    publishing:
+      app_store_connect:
+        api_key:
+          key_id: $APP_STORE_CONNECT_KEY_ID
+          issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+          private_key: $APP_STORE_CONNECT_PRIVATE_KEY
