@@ -72,7 +72,7 @@ workflows:
           xcode-project build-ipa \
             --project "$XCODE_PROJECT" \
             --scheme "$XCODE_SCHEME" \
-            --archive-xcargs "CODE_SIGN_IDENTITY=Apple Distribution: Adeline Lee (URFBLTLN99) DEVELOPMENT_TEAM=URFBLTLN99 CODE_SIGN_STYLE=Manual" \
+            --archive-xcargs "CODE_SIGN_IDENTITY='Apple Distribution: Adeline Lee (URFBLTLN99)' DEVELOPMENT_TEAM=URFBLTLN99 CODE_SIGN_STYLE=Manual" \
             --export-options-plist export_options.plist
 
     artifacts:
