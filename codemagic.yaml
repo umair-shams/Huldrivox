@@ -26,13 +26,11 @@ workflows:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           security cms -D -i profile.mobileprovision > decoded.plist
           uuid=$(/usr/libexec/PlistBuddy -c "Print UUID" decoded.plist)
-
           if [ -z "$uuid" ]; then
             echo "❌ Failed to extract UUID from provisioning profile"
             cat decoded.plist
             exit 1
           fi
-
           cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
       - name: Generate export options plist
@@ -53,16 +51,14 @@ workflows:
                   <key>com.Huldrivox</key>
                   <string>Huldrivox</string>
               </dict>
+              <key>signingCertificate</key>
+              <string>Apple Distribution</string>
               <key>compileBitcode</key>
               <true/>
-              <key>destination</key>
-              <string>export</string>
               <key>stripSwiftSymbols</key>
               <true/>
               <key>thinning</key>
               <string>&lt;none&gt;</string>
-              <key>signingCertificate</key>
-              <string>Apple Distribution</string>
           </dict>
           </plist>
           EOF
